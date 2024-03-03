@@ -1,0 +1,61 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/auth/**, /user/** , /api/user/**
+        - id: TASK-SERVICE
+          uri: lb://TASK-SERVICE
+          predicates:
+            - Path=/tasks/**, /api/v1/tasks/**
+        - id: SUBMISSION-SERVICE
+          uri: lb://SUBMISSION-SERVICE
+          predicates:
+            - Path=/submission/**, /api/v1/submissions/**
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Methods Access-Control-Allow-Headers Access-Control-Allow-Credentials
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+
+
+
+eureka:
+    client:
+      serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+      fetch-registry: true
+      register-with-eureka: true
+    instance:
+        preferIpAddress: true
+
+
+
+gateway:
+  routes:
+    - id: USER-SERVICE
+      uri: lb://USER-SERVICE
+      predicates:
+        - Path=/auth/**, /user/** , /api/user/**
+    - id: TASK-SERVICE
+      uri: lb://TASK-SERVICE
+      predicates:
+        - Path=/tasks/**, /api/v1/tasks/**
+    - id: SUBMISSION-SERVICE
+      uri: lb://SUBMISSION-SERVICE
+      predicates:
+        - Path=/submission/**, /api/v1/submissions/**

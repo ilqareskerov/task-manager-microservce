@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/task.iml" filepath="$PROJECT_DIR$/.idea/task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-service/task-service.iml" filepath="$PROJECT_DIR$/task-service/task-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-submission-service/task-submission-service/task-submission-service.iml" filepath="$PROJECT_DIR$/task-submission-service/task-submission-service/task-submission-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task-user-service/task-user-service/task-user-service.iml" filepath="$PROJECT_DIR$/task-user-service/task-user-service/task-user-service.iml" />
+    </modules>
+  </component>
+</project>
